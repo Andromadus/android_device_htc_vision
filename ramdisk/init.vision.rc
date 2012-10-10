@@ -93,8 +93,8 @@ on boot
     chmod 0660          /sys/class/leds/flashlight/brightness
 
     # Increase readahead buffers on MMC devices
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 1024
-    write /sys/block/mmcblk1/bdi/read_ahead_kb 1024
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 2048
+    write /sys/block/mmcblk1/bdi/read_ahead_kb 2048
 
     # Enable low memory killer to check file pages
     write /sys/module/lowmemorykiller/parameters/minfile 0,0,0,5120,5632,6144
@@ -104,6 +104,9 @@ on boot
     chmod 664 /sys/devices/system/cpu/cpufreq/ondemand/boostpulse
     chown root.system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
     chmod 664 /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+
+on property:sys.boot_completed=1
+    start szram
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
@@ -191,6 +194,13 @@ service htc_ebdlogd_rel /system/bin/htc_ebdlogd -s -k
     user root
     disabled
     oneshot
+
+# zram
+service szram /sbin/zram.sh
+    class main
+    user root
+    oneshot
+    disabled
 
 on property:ro.build.tags=test-keys
     start htc_ebdlogd
