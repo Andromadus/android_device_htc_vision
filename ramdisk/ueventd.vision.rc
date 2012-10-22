@@ -1,45 +1,85 @@
-/dev/system_bus_freq    0660    system      system
+/dev/rtc0               0600    system      system
 /dev/cpu_dma_latency    0660    system      system
 
-/dev/msm_vidc*          0660    system      audio
-
-/dev/msm_rotator        0660    system      graphics
-/dev/gemini0            0660    system      camera
-
-/dev/akm8975_daemon     0640    compass     system
-/dev/akm8975_aot        0640    compass     system
-/dev/oncrpc/*           0660    root        system
-
-/dev/htc-acdb           0660    system      audio
-/dev/msm_audio_dev_ctrl 0660    system      audio
-/dev/msm_acdb           0660    system      audio
-/dev/msm_pcm_lp_dec     0660    system      audio
-/dev/codec_aic3254      0660    system      audio
-
+# HTC diag
+/dev/diag_arm9          0660    radio       radio
+/dev/htcdiag            0660    radio       radio
 /dev/radio_feedback     0660    radio       radio
+
+# the genlock client device node is world writable/readable.
+/dev/genlock            0666    root        root
+
+# gpu driver for adreno200 is globally accessible
+/dev/kgsl-3d0           0666    root        root
+/dev/kgsl-2d0           0666    root        root
+
+/dev/ttyHS0 0660 bluetooth bluetooth
+/dev/ttyMSM0            0600    bluetooth   bluetooth
+/dev/uinput             0660    system      bluetooth
+
+/dev/mtp_usb            0660    root        mtp
+/dev/oncrpc/*           0660    radio       system
+/dev/i2c*               0664    root        system
+
+# HTC
 /dev/smd*               0640    radio       radio
+
+# for modem link
 /dev/smd9               0600    system      system
 
-/dev/kgsl-2d0           0666    root        root
-/dev/kgsl-3d0           0666    root        root
-/dev/genlock            0666    root        root
-/dev/rfkill             0660    root        wifi
-/dev/ttyHS0             0660    bluetooth   bluetooth
+# for camera
+/dev/gemini0            0660    system      camera
+/dev/msm_camera/*       0666    system      camera
 
-/dev/msm_mp3            0660   system     audio
-/dev/msm_mp3_lp         0660   system     audio
-/dev/msm_pcm_in         0660   system     audio
-/dev/msm_pcm_out        0660   system     audio
-/dev/htc-acdb           0660   system     audio
-/dev/htc-acoustic       0660   system     audio
-/dev/adsp               0660   system     audio
-/dev/graphics/*         0660   root       graphics
-/dev/pmem               0660   system     graphics
-/dev/pmem_audio         0660   system     audio
-/dev/ttyMSM1            0600   bluetooth  bluetooth
-/dev/uinput             0660   system     bluetooth
-/dev/bus/usb/*          0660   root       usb
-/dev/mtp_usb            0660   root       mtp
-/dev/msm_camera/*       0666   system     camera
-/dev/tun                0660   system     vpn
-/sys/devices/virtual/usb_composite/*   enable      0664  root   system
+# regular apps need to be able to open ion
+/dev/ion                0664    system      system
+
+# wifi
+/dev/rfkill             0660    root        wifi
+
+# vpn
+/dev/ppp               	0660    radio       vpn
+/dev/tun                0660    system      vpn
+
+# permissions for video
+/dev/msm_vidc*          0660    system      audio
+/dev/graphics/*         0660    root        graphics
+/dev/pmem               0660    system      graphics
+/dev/msm_rotator        0660    system      graphics
+
+# permissions for audio
+/dev/msm_aac            0660    system      audio
+/dev/msm_acdb           0660    system      audio
+/dev/msm_qcelp_in       0660    system      audio
+/dev/msm_evrc_in        0660    system      audio
+/dev/msm_amrnb_in       0640    system      audio
+/dev/msm_mvs            0660    system      audio
+/dev/msm_pcm_lp_dec     0660    system      audio
+/dev/msm_audio_dev_ctrl 0660    system      audio
+/dev/msm_mp3            0660    system      audio
+/dev/msm_mp3_lp         0660    system      audio
+/dev/msm_pcm_in         0660    system      audio
+/dev/msm_pcm_out        0660    system      audio
+/dev/htc-acdb           0660    system      audio
+/dev/codec_aic3254      0660    system      audio
+/dev/htc-acoustic       0660    system      audio
+/dev/adsp               0660    system      audio
+/dev/pmem_adsp          0660    system      audio
+
+# for vision sensors
+/dev/akm8975_aot        0640    compass     system
+/dev/akm8975_daemon     0640    compass     system
+/dev/bma150             0640    compass     system
+
+
+
+
+
+
+
+
+
+
+
+
+
