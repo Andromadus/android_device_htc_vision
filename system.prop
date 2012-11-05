@@ -15,7 +15,7 @@ com.qc.hdmi_out=false
 ro.gsm.2nd_data_retry_config=max_retries=3, 2000, 2000, 2000
 
 rild.libpath=/system/lib/libhtc_ril.so
-ro.telephony.ril.v3=signalstrength,datacallapn
+ro.telephony.ril.v3=signalstrength,datacallapn,singlepdp
 
 ro.ril.ecc.HTC-GCC=999,112,997
 ro.ril.ecc.HTC-WWE=999
