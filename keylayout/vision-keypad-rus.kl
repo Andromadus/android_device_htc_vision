@@ -15,8 +15,8 @@
 #
 # This is a keyboard layout for HTC Desire Z phone with Russian keypad
 # localization (i.e. with dedicated Language Switch button).
-# Most of unused key codes removed for easier editing.
-# (c) NeverGone, July 31, 2012.
+# Unused key codes removed for easier editing.
+# (c) NeverGone, November 9, 2012.
 #
 
 key 14    DEL
@@ -57,8 +57,6 @@ key 114   VOLUME_DOWN
 key 115   VOLUME_UP
 key 116   POWER             WAKE
 key 139   MENU
-key 158   BACK
-key 172   HOME
 key 184   HOME
 key 185   BACK
 key 186   BUTTON_3
@@ -69,20 +67,3 @@ key 212   CAMERA
 key 214   BUTTON_R2
 key 215   AT
 key 217   SEARCH
-key 226   HEADSETHOOK
-
-# Joystick and game controller axes.
-# Axes that are not mapped will be assigned generic axis numbers by the input subsystem.
-axis 0x00 X
-axis 0x01 Y
-axis 0x02 Z
-axis 0x03 RX
-axis 0x04 RY
-axis 0x05 RZ
-axis 0x06 THROTTLE
-axis 0x07 RUDDER
-axis 0x08 WHEEL
-axis 0x09 GAS
-axis 0x0a BRAKE
-axis 0x10 HAT_X
-axis 0x11 HAT_Y
