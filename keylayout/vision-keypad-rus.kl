@@ -1,4 +1,4 @@
-# Copyright (C) 2012 The Android Open Source Project
+# Copyright (C) 2013 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#
-# This is a keyboard layout for HTC Desire Z phone with Russian keypad
-# localization (i.e. with dedicated Language Switch button).
-# Most of unused key codes removed for easier editing.
-# (c) NeverGone, July 31, 2012.
-#
+# Keyboard layout for HTC Vision with Russian keypad localization
+# (i.e. with dedicated Language Switch button).
+# Device CID for this keyboard: HTC__A07
+# (c) NeverGone, February 19, 2013.
 
+# QWERTY keyboard
 key 14    DEL
 key 15    TAB
 key 16    Q
@@ -41,7 +40,6 @@ key 35    H
 key 36    J
 key 37    K
 key 38    L
-key 39    SEMICOLON
 key 42    SHIFT_LEFT
 key 44    Z
 key 45    X
@@ -53,26 +51,32 @@ key 50    M
 key 52    PERIOD
 key 56    ALT_LEFT
 key 57    SPACE
-key 114   VOLUME_DOWN
-key 115   VOLUME_UP
-key 116   POWER             WAKE
 key 139   MENU
-key 158   BACK
-key 172   HOME
-key 184   HOME
-key 185   BACK
 key 186   BUTTON_3
 key 187   LANGUAGE_SWITCH
 key 188   BUTTON_5
-key 211   FOCUS               
-key 212   CAMERA
 key 214   BUTTON_R2
 key 215   AT
 key 217   SEARCH
-key 226   HEADSETHOOK
 
-# Joystick and game controller axes.
-# Axes that are not mapped will be assigned generic axis numbers by the input subsystem.
+# User-remappable keys
+#   Since there is no tool to configure USER keys' behaviour on ICS or JB,
+#   they are set to be used as Home and Back.
+#   Eventually I'll code something to make them user-configurable, 
+#   but now it's possible to change buttons' functions in lines below.
+key 184   HOME
+key 185   BACK
+
+# Generic (GPIO) keys
+key 114   VOLUME_DOWN
+key 115   VOLUME_UP
+key 116   POWER             WAKE
+key 211   FOCUS             
+key 212   CAMERA
+
+# Joystick and game controller axes
+#   Axes that are not mapped will be assigned generic axis numbers by the
+#   input subsystem.
 axis 0x00 X
 axis 0x01 Y
 axis 0x02 Z
