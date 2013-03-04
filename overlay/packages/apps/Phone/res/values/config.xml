@@ -21,7 +21,7 @@
          so microphone muting calls should be routed through the AudioManager API. -->
     <bool name="send_mic_mute_to_AudioManager">true</bool>
 
-    <!-- This device implements a noise suppression device for in call audio-->
-    <bool name="has_in_call_noise_suppression">true</bool>
+    <!-- This device doesn't implements a noise suppression device for in call audio-->
+    <bool name="has_in_call_noise_suppression">false</bool>
 
 </resources>
