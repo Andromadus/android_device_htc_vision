@@ -209,9 +209,3 @@ service szram /sbin/zram.sh
     user root
     oneshot
     disabled
-
-on property:ro.build.tags=test-keys
-    start htc_ebdlogd
-
-on property:ro.build.tags=release-keys
-    start htc_ebdlogd_rel
