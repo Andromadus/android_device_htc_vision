@@ -24,7 +24,13 @@
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
 
-    <!-- Our amoled doesn't animate well. -->
+    <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
+    <!-- Default color for notification LED is green -->
+    <color name="config_defaultNotificationColor">#0000ff00</color>
+
+    <!-- true = fade animation, false = electron beam -->
     <bool name="config_animateScreenLights">false</bool>
     <!-- disable menu hard key on Passion in non-pattern lockscreen -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
@@ -78,8 +84,8 @@
         <item>120</item>
         <item>140</item>
         <item>160</item>
+        <item>180</item>
         <item>200</item>
-        <item>255</item>
     </integer-array>
 
 <!-- Array of output values for keyboard backlight corresponding to the LUX values
@@ -105,8 +111,9 @@ Passion has no keyboard so all values are zero.
 
     <integer name="config_deskDockKeepsScreenOn">0</integer>
 
-    <!-- Default blink frequency for notification LED is 9 seconds. -->
-    <integer name="config_defaultNotificationLedOff">9000</integer>
+    <!-- Default blink frequency for notification LED is 9 seconds. 
+     			 Let's change this to 3 sec. -->
+    <integer name="config_defaultNotificationLedOff">3000</integer>
         
     <!-- The number of degrees to rotate the display when the keyboard is open.
          A value of -1 means no change in orientation by default. -->
@@ -182,11 +189,9 @@ Passion has no keyboard so all values are zero.
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
-    <bool name="config_ui_enableFadingMarquee">false</bool>
-
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
-        <item>30</item>
+        <item>50</item>
     </integer-array>
 
     <string-array name="config_locationProviderPackageNames" translatable="false">
@@ -208,4 +213,15 @@ Passion has no keyboard so all values are zero.
          config to 7. -->
     <integer name="config_deviceHardwareKeys">15</integer>
 
+    <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
+    <bool name="config_cellBroadcastAppLinks">true</bool>
+
+    <!-- Enables or disables fading edges when marquee is enabled in TextView. -->
+    <bool name="config_ui_enableFadingMarquee">true</bool>
+
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+     <bool name="config_intrusiveNotificationLed">true</bool>
+
+     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
+     <bool name="config_intrusiveBatteryLed">true</bool>
 </resources>
