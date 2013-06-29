@@ -146,13 +146,6 @@ service akmd /system/bin/akmd
     user compass
     group compass misc input
 
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/bugmailer.sh -v
-    class late_start
-    disabled
-    oneshot
-    keycodes 114 115
-
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p13 /dev/block/mmcblk0p14
     class core
     user root
