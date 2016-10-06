@@ -220,4 +220,8 @@ Passion has no keyboard so all values are zero.
 
      <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
      <bool name="config_intrusiveBatteryLed">true</bool>
+
+    <!-- Indicate if Notification speed/length settings should be accessible in
+         Notification Light settings. -->
+    <bool name="notification_light_onoff_visible" translatable="false">false</bool>
 </resources>
