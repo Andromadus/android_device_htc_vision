@@ -233,8 +233,8 @@ key PERIOD         {
 	label:'.'
 	base:'.'
 	shift, capslock:'.'
-	alt: ','
-	shift+alt:','
+	alt: ':'
+	shift+alt:':'
 }
 key TAB            {
 	label:'\u0009'
